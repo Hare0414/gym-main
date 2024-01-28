@@ -1,0 +1,165 @@
+/* Containers */
+.BMIImg {
+  display: flex;
+  max-height: 500px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.containerBMI {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 50px 5%;
+  max-width: 50%;
+  height: auto;
+  overflow: hidden;
+  background: var(--bg-semiBlack);
+  position: relative;
+}
+
+.containerImg {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  max-width: 40%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* General */
+.main h1 {
+  padding-left: 5%;
+  margin-top: 100px;
+  text-decoration: underline var(--text-underline) 10px;
+  color: var(--text-black);
+  margin-bottom: 20px;
+}
+
+.containerBMI h2 {
+  color: var(--text-yellow);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.containerImg img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.inputs input {
+  margin-right: 20px;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
+
+.labels label {
+  margin-right: 120px;
+  margin-bottom: 20px;
+  color: var(--text-white);
+  font-size: 18px;
+}
+
+.labels span {
+  color: var(--text-yellow);
+}
+
+.main .containerBMI button {
+  position: relative;
+  margin-top: 20px;
+  padding: 12px 17px;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 700;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .containerBMI button:hover {
+  color: var(--button-text-hover);
+  border: 2px solid var(--button-border-hover);
+}
+
+.main .containerBMI button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--button-bg-before);
+  z-index: -1;
+  transition: .5s;
+  animation: manipActiveHover .5s forwards; 
+  animation-delay: 4s;
+  pointer-events: none;
+}
+
+.main .containerBMI button:hover::before {
+  width: 100%;
+}
+
+/* Animation Logo */
+@keyframes manipActiveHover {
+  100% {
+    pointer-events: auto;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inputs input {
+    width: 160px;
+    font-size: 16px;
+  }
+
+  .containerBMI h2 {
+    font-size: 19px;
+  }
+
+  .labels label {
+    font-size: 16px;
+    margin-right: 60px;
+  }
+
+  .containerBMI button {
+    font-size: 14px;
+    width: 120px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .BMIImg {
+    flex-wrap: wrap;
+  }
+
+  .containerImg {
+    display: none;
+  }
+
+  .containerBMI {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 465px) {
+  .labels {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .labels label {
+    margin-right: 90px;
+  }
+}

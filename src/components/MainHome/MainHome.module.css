@@ -1,0 +1,218 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Section Home */
+.home {
+  background-image: url('../../images/gym14.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.homeContent {
+  color: var(--text-white);
+  max-width: 600px;
+}
+
+.homeContent h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-white);
+  overflow: hidden;
+}
+
+.homeContent h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-yellow);
+}
+
+.homeContent .btnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.btnBox a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 90%;
+  background: var(--button-bg);
+  border: 2px solid var(--button-bg-before);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--button-text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.btnBox a:hover {
+  color: var(--button-text-hover);
+  border: 2px solid var(--button-border-hover);
+}
+
+.btnBox a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--button-bg-before);
+  z-index: -1;
+  transition: .5s;
+  animation: manipActiveHover .1s forwards; 
+  animation-delay: 4s;
+  pointer-events: none;
+}
+
+.btnBox a:hover::before {
+  width: 100%;
+}
+
+/* Iconos  */
+.homeSci {
+  position: absolute;
+  bottom: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.homeSci a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid var(--social-border);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--social-text);
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.homeSci a:hover {
+  color: var(--social-text-hover);
+}
+
+.homeSci a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--social-bg-before);
+  z-index: -1;
+  transition: .5s;
+}
+
+.homeSci a:hover::before {
+  width: 100%;
+}
+
+/* Animation Logo */
+@keyframes showRight {
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes manipActiveHover {
+  100% {
+    pointer-events: auto;
+  }
+}
+
+/* Responsive */
+@media (max-width:800px) {
+  .home .homeContent h3,
+  .home .homeContent h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .home {
+    padding-left: 2%;
+  }
+
+  .home .btnBox a {
+    font-size: 1.2rem;
+    width: 95%;
+  
+  }
+  .home .homeSci a {
+    font-size: 1.9rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .homeSci {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  .btnBox, 
+  .homeContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media (max-width:500px) {
+  .home .homeContent h3,
+  .home .homeContent h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:350px) {
+  .home .homeContent h3,
+  .home .homeContent h1 {
+    font-size: 1.6rem;
+  }
+
+  .home .btnBox a {
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  .home {
+    padding-left: 0%;
+  }
+}
+

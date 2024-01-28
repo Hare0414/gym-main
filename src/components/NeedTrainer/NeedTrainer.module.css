@@ -1,0 +1,126 @@
+/* Containers */
+.containerNeedTrainer {
+  display: flex;
+  max-height: 500px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.containerTextButton {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 50px 5%;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: var(--bg-semiBlack);
+  position: relative;
+}
+
+.containerImg {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  max-width: 40%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* General */
+.main h1 {
+  padding-left: 5%;
+  margin-top: 100px;
+  text-decoration: underline var(--text-underline) 10px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.containerTextButton h2 {
+  color: var(--text-yellow);
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.containerTextButton h3 {
+  color: var(--text-white);
+  font-size: 30px;
+}
+
+.containerImg img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.main .containerTextButton button {
+  position: relative;
+  margin-top: 20px;
+  padding: 12px 17px;
+  font-size: 18px;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 800;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .containerTextButton button:hover {
+  color: var(--button-text-hover);
+  border: 2px solid var(--button-border-hover);
+}
+
+.main .containerTextButton button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--button-bg-before);
+  z-index: -1;
+  transition: .5s;
+  animation: manipActiveHover .5s forwards; 
+  animation-delay: 4s;
+  pointer-events: none;
+}
+
+.main .containerTextButton button:hover::before {
+  width: 100%;
+}
+
+/* Animation Logo */
+@keyframes manipActiveHover {
+  100% {
+    pointer-events: auto;
+  }
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .containerImg {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .containerTextButton h2 {
+    font-size: 18px;
+  }
+  
+  .containerTextButton h3 {
+    font-size: 23px;
+  }
+
+  .main .containerTextButton button {
+    font-size: 14px;
+    width: 9rem;
+    height: 2.5rem;
+  }
+}
